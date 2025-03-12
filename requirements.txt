@@ -1,0 +1,10 @@
+ipykernel
+langchain
+langchain-community
+pypdf
+sentence-transformers
+chromadb
+streamlit
+google-generativeai
+python-dotenv
+langchain-huggingface
