@@ -1,5 +1,5 @@
-from langchain_huggingface import HuggingFaceEmbeddings  
-from langchain_chroma import Chroma 
+from langchain_huggingface import HuggingFaceEmbeddings  # ✅ Updated import
+from langchain_chroma import Chroma  # ✅ Updated import
 
 from config import EMBEDDING_MODEL, CHROMA_DB_PATH
 
@@ -20,3 +20,4 @@ def load_vector_store():
     embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
     db = Chroma(persist_directory=CHROMA_DB_PATH, embedding_function=embeddings)
     return db
+
