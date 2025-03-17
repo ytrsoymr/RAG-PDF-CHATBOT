@@ -21,6 +21,9 @@ uploaded_files = st.file_uploader("Upload PDF files", type=["pdf"], accept_multi
 chunk_size = st.slider("Select chunk size for document processing:", min_value=200, max_value=2000, step=100, value=500)
 chunk_overlap = st.slider("Select chunk overlap:", min_value=0, max_value=500, step=50, value=50)
 
+# Number of retrieved chunks
+num_chunks = st.slider("Select number of chunks to retrieve:", min_value=1, max_value=10, step=1, value=5)
+
 temp_directory = "uploaded_pdfs"
 os.makedirs(temp_directory, exist_ok=True)
 
@@ -43,7 +46,7 @@ query = st.text_input("Ask me anything:")
 
 if query:
     with st.spinner("Retrieving relevant information..."):
-        similar_chunks = retrieve_similar_chunks(query, k=3)
+        similar_chunks = retrieve_similar_chunks(query, k=num_chunks)
         ans = generate_answer(query=query, context=similar_chunks)
     
     st.subheader("Response:")
