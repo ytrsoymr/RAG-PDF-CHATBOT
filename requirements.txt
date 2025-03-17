@@ -7,5 +7,7 @@ chromadb
 streamlit
 google-generativeai
 python-dotenv
+PyMuPDF
 langchain-huggingface
 langchain-chroma
+langchain-google-genai
